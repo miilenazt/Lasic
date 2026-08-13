@@ -1,126 +1,154 @@
-/* Configurações Globais */
+/* Configurações Gerais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Efeito de rolagem estilo Slide */
-html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: #f4f5f7;
+    color: #0e1318;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Estrutura de cada Slide */
-.slide {
-    height: 100vh;
-    width: 100%;
+/* Barra Superior (Estilo Canva) */
+.top-nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    scroll-snap-align: start;
-    text-align: center;
+    background-color: #ffffff;
+    padding: 12px 24px;
+    border-bottom: 1px solid #e5e8ed;
 }
 
-/* Caixa de Conteúdo */
-.content {
-    max-width: 800px;
-    width: 100%;
-    background: rgba(30, 41, 59, 0.7);
-    padding: 3rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.logo .gradient-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7d2ae8, #00c4cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* Tipografia */
-h1 {
-    font-size: 3rem;
-    color: #38bdf8;
-    margin-bottom: 1rem;
+.top-menu a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #5b6871;
+    font-weight: 500;
 }
 
-h2 {
-    font-size: 2.2rem;
-    color: #38bdf8;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #0284c7;
-    padding-bottom: 0.5rem;
+.top-menu a.active, .top-menu a:hover {
+    color: #7d2ae8;
 }
 
-p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #cbd5e1;
-    margin-bottom: 1rem;
+.btn-primary {
+    background: linear-gradient(135deg, #7d2ae8, #00c4cc);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
 }
 
-.subtitle {
-    font-size: 1.4rem;
-    color: #94a3b8;
+.btn-primary:hover {
+    opacity: 0.9;
 }
 
-ul {
-    text-align: left;
-    list-style: none;
-    margin-top: 1rem;
-}
-
-li {
-    font-size: 1.2rem;
-    line-height: 2;
-    color: #e2e8f0;
-}
-
-li strong {
-    color: #38bdf8;
-}
-
-/* Cards para o Slide 3 */
-.cards-container {
+/* Layout Principal */
+.main-container {
     display: flex;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e8ed;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    color: #5b6871;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.sidebar li.active, .sidebar li:hover {
+    background-color: #f0ebf8;
+    color: #7d2ae8;
+}
+
+/* Conteúdo */
+.content {
+    flex: 1;
+    padding: 32px;
+}
+
+/* Banner */
+.hero-card {
+    background: linear-gradient(135deg, #7d2ae8, #5415b6);
+    color: white;
+    padding: 40px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 12px rgba(125, 42, 232, 0.15);
+}
+
+.hero-card h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.hero-card p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Grid de Cartões */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
 .card {
-    background: rgba(15, 23, 42, 0.6);
-    padding: 1.5rem;
-    border-radius: 8px;
-    flex: 1;
-    border-left: 4px solid #38bdf8;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e5e8ed;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
 }
 
 .card h3 {
-    color: #38bdf8;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #0e1318;
 }
 
-/* Indicador do Slide 1 */
-.scroll-indicator {
-    display: block;
-    margin-top: 3rem;
-    font-size: 0.9rem;
-    color: #64748b;
-    animation: bounce 2s infinite;
+.card p {
+    font-size: 0.95rem;
+    color: #5b6871;
+    line-height: 1.4;
 }
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-
-/* Modificações visuais simples por Slide */
-.slide-1 { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-.slide-2 { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
-.slide-3 { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); }
-.slide-4 { background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); }
-.slide-5 { background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%); }
