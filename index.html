@@ -18,8 +18,8 @@
             </div>
         </div>
         <div class="header-right">
-            <button class="btn-secondary" onclick="alert('Link copiado para a área de transferência!')">Compartilhar</button>
-            <button class="btn-canva-pro" onclick="alert('Baixando design em PDF...')">Baixar</button>
+            <button class="btn-secondary" onclick="alert('Link copiado!')">Compartilhar</button>
+            <button class="btn-canva-pro" onclick="alert('Baixando PDF...')">Baixar</button>
         </div>
     </header>
 
@@ -27,10 +27,10 @@
         <div class="font-selector">Inter</div>
         <div class="font-size">24</div>
         <div class="text-tools">
-            <button title="Negrito"><b>B</b></button>
-            <button title="Itálico"><i>I</i></button>
-            <button title="Sublinhado"><u>U</u></button>
-            <button title="Cor do Texto">🎨</button>
+            <button><b>B</b></button>
+            <button><i>I</i></button>
+            <button><u>U</u></button>
+            <button>🎨</button>
         </div>
         <div class="action-tools">
             <button>Animar</button>
@@ -42,40 +42,71 @@
     <div class="canva-workspace">
 
         <aside class="main-sidebar">
-            <div class="nav-item active">
+            <div class="nav-item active" onclick="abrirAba('design', this)">
                 <span class="icon">🎨</span>
                 <span class="label">Design</span>
             </div>
-            <div class="nav-item">
+            <div class="nav-item" onclick="abrirAba('elementos', this)">
                 <span class="icon">🧩</span>
                 <span class="label">Elementos</span>
             </div>
-            <div class="nav-item">
+            <div class="nav-item" onclick="abrirAba('texto', this)">
                 <span class="icon">T</span>
                 <span class="label">Texto</span>
             </div>
-            <div class="nav-item">
+            <div class="nav-item" onclick="abrirAba('uploads', this)">
                 <span class="icon">☁️</span>
                 <span class="label">Uploads</span>
             </div>
         </aside>
 
-        <aside class="panel-sidebar">
-            <h3>Templates de Saúde</h3>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar cirurgia a laser...">
+        <aside class="panel-sidebar" id="panel-sidebar">
+            
+            <div id="aba-design" class="aba-conteudo">
+                <h3>Templates de Saúde</h3>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar cirurgia a laser...">
+                </div>
+                <div class="templates-grid" style="margin-top: 15px;">
+                    <div class="thumb-card active" onclick="carregarTemplate('ocular')">Laser Ocular</div>
+                    <div class="thumb-card" onclick="carregarTemplate('dermo')">Dermatologia</div>
+                    <div class="thumb-card" onclick="carregarTemplate('pos')">Pós-Operatório</div>
+                    <div class="thumb-card" onclick="carregarTemplate('duvidas')">Dúvidas Frequentes</div>
+                </div>
             </div>
-            <div class="templates-grid">
-                <div class="thumb-card active" id="btn-ocular" onclick="carregar('ocular')">Laser Ocular</div>
-                <div class="thumb-card" id="btn-dermo" onclick="carregar('dermo')">Dermatologia</div>
-                <div class="thumb-card" id="btn-pos" onclick="carregar('pos')">Pós-Operatório</div>
-                <div class="thumb-card" id="btn-duvidas" onclick="carregar('duvidas')">Dúvidas Frequentes</div>
+
+            <div id="aba-elementos" class="aba-conteudo" style="display: none;">
+                <h3>Elementos Gráficos</h3>
+                <p style="font-size: 0.8rem; color: #8b96a5; margin-bottom: 15px;">Clique para adicionar ao design:</p>
+                <div class="templates-grid">
+                    <div class="thumb-card" onclick="adicionarElemento('👁️', 'Oftalmologia')">👁️ Olho</div>
+                    <div class="thumb-card" onclick="adicionarElemento('✨', 'Laser')">✨ Brilho</div>
+                    <div class="thumb-card" onclick="adicionarElemento('🛡️', 'Segurança')">🛡️ Escudo</div>
+                    <div class="thumb-card" onclick="adicionarElemento('🔬', 'Tecnologia')">🔬 Lente</div>
+                </div>
             </div>
+
+            <div id="aba-texto" class="aba-conteudo" style="display: none;">
+                <h3>Adicionar Texto</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                    <button class="btn-secondary" style="text-align: left; padding: 12px;" onclick="adicionarTexto('Novo Título Principal')"><b>+ Adicionar Título</b></button>
+                    <button class="btn-secondary" style="text-align: left; padding: 10px;" onclick="adicionarTexto('Novo Subtítulo informativo')">+ Adicionar Subtítulo</button>
+                    <button class="btn-secondary" style="text-align: left; padding: 8px; font-size: 0.8rem;" onclick="adicionarTexto('Texto complementar sobre o tratamento.')">+ Adicionar corpo de texto</button>
+                </div>
+            </div>
+
+            <div id="aba-uploads" class="aba-conteudo" style="display: none;">
+                <h3>Seus Arquivos</h3>
+                <div style="border: 2px dashed #374151; border-radius: 8px; padding: 20px; text-align: center; margin-top: 15px;">
+                    <p style="font-size: 0.8rem; color: #8b96a5;">Arraste imagens do seu computador ou faça upload de laudos/exames.</p>
+                    <button class="btn-canva-pro" style="margin-top: 10px;" onclick="alert('Funcionalidade de Upload de Imagem simulada!')">Fazer Upload</button>
+                </div>
+            </div>
+
         </aside>
 
         <main class="canvas-area">
-            <div class="artboard">
-                
+            <div class="artboard" id="artboard">
                 <div class="design-header">
                     <span class="badge" id="art-badge" contenteditable="true">TECNOLOGIA MÉDICA</span>
                     <h1 class="editable-element" id="art-title" contenteditable="true">Guia Completo: Cirurgia a Laser</h1>
@@ -105,24 +136,38 @@
                 <div class="design-footer editable-element" id="art-footer" contenteditable="true">
                     <span>Agende sua avaliação com um especialista</span>
                 </div>
-
             </div>
         </main>
 
     </div>
 
     <script>
-        function carregar(tipo) {
-            // Remove destaque dos botões do menu
-            document.querySelectorAll('.thumb-card').forEach(c => c.classList.remove('active'));
+        // 1. Função para trocar os menus do canto esquerdo
+        function abrirAba(nomeAba, elementoClicado) {
+            // Remove destaque do ícone anterior
+            document.querySelectorAll('.main-sidebar .nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            // Ativa o ícone clicado
+            elementoClicado.classList.add('active');
 
+            // Esconde todas as abas internas
+            document.querySelectorAll('.aba-conteudo').forEach(aba => {
+                aba.style.display = 'none';
+            });
+
+            // Mostra a aba selecionada
+            document.getElementById('aba-' + nomeAba).style.display = 'block';
+        }
+
+        // 2. Função para alterar os templates centrais
+        function carregarTemplate(tipo) {
             const badge = document.getElementById('art-badge');
             const title = document.getElementById('art-title');
             const sub = document.getElementById('art-sub');
             const grid = document.getElementById('art-grid');
 
             if (tipo === 'ocular') {
-                document.getElementById('btn-ocular').classList.add('active');
                 badge.innerText = "TECNOLOGIA MÉDICA";
                 title.innerText = "Guia Completo: Cirurgia a Laser";
                 sub.innerText = "Tratamentos precisos, indolores e de rápida recuperação.";
@@ -144,7 +189,6 @@
                     </div>
                 `;
             } else if (tipo === 'dermo') {
-                document.getElementById('btn-dermo').classList.add('active');
                 badge.innerText = "DERMATOLOGIA AVANÇADA";
                 title.innerText = "Tratamentos a Laser para a Pele";
                 sub.innerText = "Renovação celular e alta precisão estética.";
@@ -166,7 +210,6 @@
                     </div>
                 `;
             } else if (tipo === 'pos') {
-                document.getElementById('btn-pos').classList.add('active');
                 badge.innerText = "CUIDADOS MÉDICOS";
                 title.innerText = "Orientações do Pós-Operatório";
                 sub.innerText = "Passos fundamentais para garantir os melhores resultados.";
@@ -188,7 +231,6 @@
                     </div>
                 `;
             } else if (tipo === 'duvidas') {
-                document.getElementById('btn-duvidas').classList.add('active');
                 badge.innerText = "PERGUNTAS FREQUENTES";
                 title.innerText = "Dúvidas Frequentes sobre o Laser";
                 sub.innerText = "Tudo o que você precisa saber antes do procedimento.";
@@ -210,6 +252,32 @@
                     </div>
                 `;
             }
+        }
+
+        // 3. Adicionar Elementos Gráficos no Design
+        function adicionarElemento(emoji, titulo) {
+            const grid = document.getElementById('art-grid');
+            const novoCard = document.createElement('div');
+            novoCard.className = 'design-card editable-element';
+            novoCard.contentEditable = 'true';
+            novoCard.innerHTML = `
+                <div class="card-emoji">${emoji}</div>
+                <h3>${titulo}</h3>
+                <p>Clique aqui para escrever as informações sobre este item.</p>
+            `;
+            grid.appendChild(novoCard);
+        }
+
+        // 4. Adicionar Textos Extras no Design
+        function adicionarTexto(texto) {
+            const artboard = document.getElementById('artboard');
+            const novoTexto = document.createElement('p');
+            novoTexto.className = 'editable-element';
+            novoTexto.contentEditable = 'true';
+            novoTexto.style.marginTop = '15px';
+            novoTexto.style.textAlign = 'center';
+            novoTexto.innerText = texto;
+            artboard.appendChild(novoTexto);
         }
     </script>
 </body>
