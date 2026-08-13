@@ -13,13 +13,13 @@
         <div class="header-left">
             <span class="canva-logo">Canva</span>
             <div class="file-info">
-                <span class="doc-title">Design - Cirurgia a Laser</span>
+                <span class="doc-title" id="doc-title">Design - Cirurgia a Laser</span>
                 <span class="save-status">Todas as alterações foram salvas</span>
             </div>
         </div>
         <div class="header-right">
-            <button class="btn-secondary">Compartilhar</button>
-            <button class="btn-canva-pro">Baixar</button>
+            <button class="btn-secondary" onclick="alert('Link de compartilhamento copiado!')">Compartilhar</button>
+            <button class="btn-canva-pro" onclick="alert('Baixando seu design em PDF...')">Baixar</button>
         </div>
     </header>
 
@@ -27,11 +27,10 @@
         <div class="font-selector">Inter</div>
         <div class="font-size">24</div>
         <div class="text-tools">
-            <button><b>B</b></button>
-            <button><i>I</i></button>
-            <button><u>U</u></button>
-            <button>🎨</button>
-            <button>≡</button>
+            <button title="Negrito"><b>B</b></button>
+            <button title="Itálico"><i>I</i></button>
+            <button title="Sublinhado"><u>U</u></button>
+            <button title="Cor do Texto">🎨</button>
         </div>
         <div class="action-tools">
             <button>Animar</button>
@@ -59,10 +58,6 @@
                 <span class="icon">☁️</span>
                 <span class="label">Uploads</span>
             </div>
-            <div class="nav-item">
-                <span class="icon">✏️</span>
-                <span class="label">Desenhar</span>
-            </div>
         </aside>
 
         <aside class="panel-sidebar">
@@ -71,43 +66,43 @@
                 <input type="text" placeholder="Buscar cirurgia a laser...">
             </div>
             <div class="templates-grid">
-                <div class="thumb-card active">Laser Ocular</div>
-                <div class="thumb-card">Dermatologia</div>
-                <div class="thumb-card">Pós-Operatório</div>
-                <div class="thumb-card">Dúvidas Frequentes</div>
+                <div class="thumb-card active" onclick="carregarTemplate('ocular')">Laser Ocular</div>
+                <div class="thumb-card" onclick="carregarTemplate('dermo')">Dermatologia</div>
+                <div class="thumb-card" onclick="carregarTemplate('pos')">Pós-Operatório</div>
+                <div class="thumb-card" onclick="carregarTemplate('duvidas')">Dúvidas Frequentes</div>
             </div>
         </aside>
 
         <main class="canvas-area">
-            <div class="artboard">
+            <div class="artboard" id="artboard">
                 
                 <div class="design-header">
-                    <span class="badge">TECNOLOGIA MÉDICA</span>
-                    <h1 class="editable-element">Guia Completo: Cirurgia a Laser</h1>
-                    <p class="editable-element">Tratamentos precisos, indolores e de rápida recuperação.</p>
+                    <span class="badge" id="art-badge">TECNOLOGIA MÉDICA</span>
+                    <h1 class="editable-element" contenteditable="true" id="art-title">Guia Completo: Cirurgia a Laser</h1>
+                    <p class="editable-element" contenteditable="true" id="art-sub">Tratamentos precisos, indolores e de rápida recuperação.</p>
                 </div>
 
-                <div class="design-grid">
-                    <div class="design-card editable-element">
+                <div class="design-grid" id="art-grid">
+                    <div class="design-card editable-element" contenteditable="true">
                         <div class="card-emoji">👁️</div>
                         <h3>Visão (LASIK)</h3>
                         <p>Correção de miopia e astigmatismo em poucos minutos.</p>
                     </div>
 
-                    <div class="design-card editable-element">
+                    <div class="design-card editable-element" contenteditable="true">
                         <div class="card-emoji">✨</div>
                         <h3>Pele & Estética</h3>
                         <p>Remoção de manchas, cicatrizes e rejuvenescimento.</p>
                     </div>
 
-                    <div class="design-card editable-element">
+                    <div class="design-card editable-element" contenteditable="true">
                         <div class="card-emoji">🛡️</div>
                         <h3>Vantagens</h3>
                         <p>Sem cortes profundos, menor risco e rápida alta.</p>
                     </div>
                 </div>
 
-                <div class="design-footer editable-element">
+                <div class="design-footer editable-element" contenteditable="true" id="art-footer">
                     <span>Agende sua avaliação com um especialista</span>
                 </div>
 
@@ -116,5 +111,6 @@
 
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
