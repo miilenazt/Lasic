@@ -3,47 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cirurgia a Laser - Centro de Informações</title>
+    <title>LaserMed - Editor Canva</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="top-nav">
-        <div class="logo">
-            <span class="gradient-text">LaserMed</span>
+    <header class="canva-header">
+        <div class="header-left">
+            <span class="canva-logo">Canva</span>
+            <div class="file-info">
+                <span class="doc-title">Design - Cirurgia a Laser</span>
+                <span class="save-status">Todas as alterações foram salvas</span>
+            </div>
         </div>
-        <nav class="top-menu">
-            <a href="#" class="active">Início</a>
-            <a href="#">Procedimentos</a>
-            <a href="#">Tecnologia</a>
-            <a href="#">Dúvidas</a>
-        </nav>
-        <div class="user-action">
-            <button class="btn-primary">Agendar Consulta</button>
+        <div class="header-right">
+            <button class="btn-secondary">Compartilhar</button>
+            <button class="btn-canva-pro">Baixar</button>
         </div>
     </header>
 
-    <div class="main-container">
+    <div class="editor-toolbar">
+        <div class="font-selector">Inter</div>
+        <div class="font-size">24</div>
+        <div class="text-tools">
+            <button><b>B</b></button>
+            <button><i>I</i></button>
+            <button><u>U</u></button>
+            <button>🎨</button>
+            <button>≡</button>
+        </div>
+        <div class="action-tools">
+            <button>Animar</button>
+            <button>Posição</button>
+            <button>Transparência</button>
+        </div>
+    </div>
 
-        <aside class="sidebar">
-            <ul>
-                <li class="active">👁️ Visão Geral</li>
-                <li>🎯 Tipos de Laser</li>
-                <li>🩹 Pós-Operatório</li>
-                <li>📊 Vantagens</li>
-            </ul>
+    <div class="canva-workspace">
+
+        <aside class="main-sidebar">
+            <div class="nav-item active">
+                <span class="icon">🎨</span>
+                <span class="label">Design</span>
+            </div>
+            <div class="nav-item">
+                <span class="icon">🧩</span>
+                <span class="label">Elementos</span>
+            </div>
+            <div class="nav-item">
+                <span class="icon">T</span>
+                <span class="label">Texto</span>
+            </div>
+            <div class="nav-item">
+                <span class="icon">☁️</span>
+                <span class="label">Uploads</span>
+            </div>
+            <div class="nav-item">
+                <span class="icon">✏️</span>
+                <span class="label">Desenhar</span>
+            </div>
         </aside>
 
-        <main class="content">
+        <aside class="panel-sidebar">
+            <h3>Templates de Saúde</h3>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar cirurgia a laser...">
+            </div>
+            <div class="templates-grid">
+                <div class="thumb-card active">Laser Ocular</div>
+                <div class="thumb-card">Dermatologia</div>
+                <div class="thumb-card">Pós-Operatório</div>
+                <div class="thumb-card">Dúvidas Frequentes</div>
+            </div>
+        </aside>
 
-            <section class="hero-card">
-                <h1>Tudo sobre Cirurgia a Laser</h1>
-                <p>Tecnologia de precisão para tratamentos seguros, rápidos e de alta eficácia.</p>
-            </section>
-
-            <section class="grid-cards">
+        <main class="canvas-area">
+            <div class="artboard">
                 
-                <div class="card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Como Funciona?</h3>
+                <div class="design-header">
+                    <span class="badge">TECNOLOGIA MÉDICA</span>
+                    <h1 class="editable-element">Guia Completo: Cirurgia a Laser</h1>
+                    <p class="editable-element">Tratamentos precisos, indolores e de rápida recuperação.</p>
+                </div>
+
+                <div class="design-grid">
+                    <div class="design-card editable-element">
+                        <div class="card-emoji">👁️</div>
+                        <h3>Visão (LASIK)</h3>
+                        <p>Correção de miopia e astigmatismo em poucos minutos.</p>
+                    </div>
+
+                    <div class="design-card editable-element">
+                        <div class="card-emoji">✨</div>
+                        <h3>Pele & Estética</h3>
+                        <p>Remoção de manchas, cicatrizes e rejuvenescimento.</p>
+                    </div>
+
+                    <div class="design-card editable-element">
+                        <div class="card-emoji">🛡️</div>
+                        <h3>Vantagens</h3>
+                        <p>Sem cortes profundos, menor risco e rápida alta.</p>
+                    </div>
+                </div>
+
+                <div class="design-footer editable-element">
+                    <span>Agende sua avaliação com um especialista</span>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
