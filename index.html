@@ -13,13 +13,13 @@
         <div class="header-left">
             <span class="canva-logo">Canva</span>
             <div class="file-info">
-                <span class="doc-title" id="doc-title">Design - Cirurgia a Laser</span>
+                <span class="doc-title">Design - Cirurgia a Laser</span>
                 <span class="save-status">Todas as alterações foram salvas</span>
             </div>
         </div>
         <div class="header-right">
-            <button class="btn-secondary" onclick="alert('Link de compartilhamento copiado!')">Compartilhar</button>
-            <button class="btn-canva-pro" onclick="alert('Baixando seu design em PDF...')">Baixar</button>
+            <button class="btn-secondary" onclick="alert('Link copiado para a área de transferência!')">Compartilhar</button>
+            <button class="btn-canva-pro" onclick="alert('Baixando design em PDF...')">Baixar</button>
         </div>
     </header>
 
@@ -66,43 +66,43 @@
                 <input type="text" placeholder="Buscar cirurgia a laser...">
             </div>
             <div class="templates-grid">
-                <div class="thumb-card active" onclick="carregarTemplate('ocular')">Laser Ocular</div>
-                <div class="thumb-card" onclick="carregarTemplate('dermo')">Dermatologia</div>
-                <div class="thumb-card" onclick="carregarTemplate('pos')">Pós-Operatório</div>
-                <div class="thumb-card" onclick="carregarTemplate('duvidas')">Dúvidas Frequentes</div>
+                <div class="thumb-card active" id="btn-ocular" onclick="carregar('ocular')">Laser Ocular</div>
+                <div class="thumb-card" id="btn-dermo" onclick="carregar('dermo')">Dermatologia</div>
+                <div class="thumb-card" id="btn-pos" onclick="carregar('pos')">Pós-Operatório</div>
+                <div class="thumb-card" id="btn-duvidas" onclick="carregar('duvidas')">Dúvidas Frequentes</div>
             </div>
         </aside>
 
         <main class="canvas-area">
-            <div class="artboard" id="artboard">
+            <div class="artboard">
                 
                 <div class="design-header">
-                    <span class="badge" id="art-badge">TECNOLOGIA MÉDICA</span>
-                    <h1 class="editable-element" contenteditable="true" id="art-title">Guia Completo: Cirurgia a Laser</h1>
-                    <p class="editable-element" contenteditable="true" id="art-sub">Tratamentos precisos, indolores e de rápida recuperação.</p>
+                    <span class="badge" id="art-badge" contenteditable="true">TECNOLOGIA MÉDICA</span>
+                    <h1 class="editable-element" id="art-title" contenteditable="true">Guia Completo: Cirurgia a Laser</h1>
+                    <p class="editable-element" id="art-sub" contenteditable="true">Tratamentos precisos, indolores e de rápida recuperação.</p>
                 </div>
 
                 <div class="design-grid" id="art-grid">
                     <div class="design-card editable-element" contenteditable="true">
                         <div class="card-emoji">👁️</div>
                         <h3>Visão (LASIK)</h3>
-                        <p>Correção de miopia e astigmatismo em poucos minutos.</p>
+                        <p>Correção de miopia, astigmatismo e hipermetropia em poucos minutos.</p>
                     </div>
 
                     <div class="design-card editable-element" contenteditable="true">
                         <div class="card-emoji">✨</div>
                         <h3>Pele & Estética</h3>
-                        <p>Remoção de manchas, cicatrizes e rejuvenescimento.</p>
+                        <p>Remoção de manchas, cicatrizes de acne e rejuvenescimento facial.</p>
                     </div>
 
                     <div class="design-card editable-element" contenteditable="true">
                         <div class="card-emoji">🛡️</div>
                         <h3>Vantagens</h3>
-                        <p>Sem cortes profundos, menor risco e rápida alta.</p>
+                        <p>Sem cortes profundos, menor risco de infecção e rápida recuperação.</p>
                     </div>
                 </div>
 
-                <div class="design-footer editable-element" contenteditable="true" id="art-footer">
+                <div class="design-footer editable-element" id="art-footer" contenteditable="true">
                     <span>Agende sua avaliação com um especialista</span>
                 </div>
 
@@ -111,6 +111,106 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function carregar(tipo) {
+            // Remove destaque dos botões do menu
+            document.querySelectorAll('.thumb-card').forEach(c => c.classList.remove('active'));
+
+            const badge = document.getElementById('art-badge');
+            const title = document.getElementById('art-title');
+            const sub = document.getElementById('art-sub');
+            const grid = document.getElementById('art-grid');
+
+            if (tipo === 'ocular') {
+                document.getElementById('btn-ocular').classList.add('active');
+                badge.innerText = "TECNOLOGIA MÉDICA";
+                title.innerText = "Guia Completo: Cirurgia a Laser";
+                sub.innerText = "Tratamentos precisos, indolores e de rápida recuperação.";
+                grid.innerHTML = `
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">👁️</div>
+                        <h3>Visão (LASIK)</h3>
+                        <p>Correção de miopia, astigmatismo e hipermetropia em poucos minutos.</p>
+                    </div>
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">✨</div>
+                        <h3>Pele & Estética</h3>
+                        <p>Remoção de manchas, cicatrizes de acne e rejuvenescimento facial.</p>
+                    </div>
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">🛡️</div>
+                        <h3>Vantagens</h3>
+                        <p>Sem cortes profundos, menor risco de infecção e rápida recuperação.</p>
+                    </div>
+                `;
+            } else if (tipo === 'dermo') {
+                document.getElementById('btn-dermo').classList.add('active');
+                badge.innerText = "DERMATOLOGIA AVANÇADA";
+                title.innerText = "Tratamentos a Laser para a Pele";
+                sub.innerText = "Renovação celular e alta precisão estética.";
+                grid.innerHTML = `
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">🌟</div>
+                        <h3>Rejuvenescimento</h3>
+                        <p>Estímulo intenso de colágeno para atenuar linhas e rugas.</p>
+                    </div>
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">🎯</div>
+                        <h3>Remoção de Manchas</h3>
+                        <p>Ação direta na pigmentação para tratar melasma e sardas.</p>
+                    </div>
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">⚡</div>
+                        <h3>Cicatrizes</h3>
+                        <p>Suavização de marcas e uniformização da textura da pele.</p>
+                    </div>
+                `;
+            } else if (tipo === 'pos') {
+                document.getElementById('btn-pos').classList.add('active');
+                badge.innerText = "CUIDADOS MÉDICOS";
+                title.innerText = "Orientações do Pós-Operatório";
+                sub.innerText = "Passos fundamentais para garantir os melhores resultados.";
+                grid.innerHTML = `
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">🕶️</div>
+                        <h3>Proteção Solar</h3>
+                        <p>Uso indispensável de óculos escuros e filtro solar indicado.</p>
+                    </div>
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">💧</div>
+                        <h3>Medicamentos</h3>
+                        <p>Aplicação rigorosa de colírios ou pomadas nos horários certos.</p>
+                    </div>
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">🛌</div>
+                        <h3>Repouso</h3>
+                        <p>Evite esfregar a área tratada e evite atividades intensas no início.</p>
+                    </div>
+                `;
+            } else if (tipo === 'duvidas') {
+                document.getElementById('btn-duvidas').classList.add('active');
+                badge.innerText = "PERGUNTAS FREQUENTES";
+                title.innerText = "Dúvidas Frequentes sobre o Laser";
+                sub.innerText = "Tudo o que você precisa saber antes do procedimento.";
+                grid.innerHTML = `
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">❓</div>
+                        <h3>O procedimento dói?</h3>
+                        <p>Não. É aplicada anestesia local em gotas ou cremes anestésicos.</p>
+                    </div>
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">⏱️</div>
+                        <h3>Quanto tempo dura?</h3>
+                        <p>Na maioria dos casos, entre 15 a 30 minutos de aplicação.</p>
+                    </div>
+                    <div class="design-card editable-element" contenteditable="true">
+                        <div class="card-emoji">🏥</div>
+                        <h3>Precisa de internação?</h3>
+                        <p>Não. O procedimento é ambulatorial e o paciente volta para casa no dia.</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
 </body>
 </html>
