@@ -1,0 +1,106 @@
+// Função para trocar o conteúdo do Canvas ao clicar nos Templates
+function carregarTemplate(tipo) {
+    
+    // Remove a classe "active" de todos os cartões do menu lateral
+    const cards = document.querySelectorAll('.thumb-card');
+    cards.forEach(card => card.classList.remove('active'));
+
+    // Pega os elementos do Canvas principal
+    const title = document.getElementById('art-title');
+    const sub = document.getElementById('art-sub');
+    const badge = document.getElementById('art-badge');
+    const grid = document.getElementById('art-grid');
+
+    // Marca o botão clicado
+    event.currentTarget.classList.add('active');
+
+    // Troca o conteúdo de acordo com o template clicado
+    if (tipo === 'ocular') {
+        badge.innerText = "TECNOLOGIA MÉDICA";
+        title.innerText = "Guia Completo: Cirurgia a Laser";
+        sub.innerText = "Tratamentos precisos, indolores e de rápida recuperação.";
+        grid.innerHTML = `
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">👁️</div>
+                <h3>Visão (LASIK)</h3>
+                <p>Correção de miopia e astigmatismo em poucos minutos.</p>
+            </div>
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">✨</div>
+                <h3>Pele & Estética</h3>
+                <p>Remoção de manchas, cicatrizes e rejuvenescimento.</p>
+            </div>
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">🛡️</div>
+                <h3>Vantagens</h3>
+                <p>Sem cortes profundos, menor risco e rápida alta.</p>
+            </div>
+        `;
+    } 
+    else if (tipo === 'dermo') {
+        badge.innerText = "DERMATOLOGIA AVANÇADA";
+        title.innerText = "Laser na Dermatologia";
+        sub.innerText = "Renove sua pele com tecnologia de última geração.";
+        grid.innerHTML = `
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">🌟</div>
+                <h3>Rejuvenescimento</h3>
+                <p>Estímulo de colágeno e redução de rugas profundas.</p>
+            </div>
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">🎯</div>
+                <h3>Remoção de Manchas</h3>
+                <p>Tratamento eficaz contra melasma e sardas.</p>
+            </div>
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">⚡</div>
+                <h3>Cicatrizes</h3>
+                <p>Suavização de marcas de acne e cirurgias.</p>
+            </div>
+        `;
+    }
+    else if (tipo === 'pos') {
+        badge.innerText = "CUIDADOS MÉDICOS";
+        title.innerText = "Cuidados no Pós-Operatório";
+        sub.innerText = "Siga estas orientações para garantir os melhores resultados.";
+        grid.innerHTML = `
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">🕶️</div>
+                <h3>Proteção Solar</h3>
+                <p>Use óculos escuros e protetor solar recomendado.</p>
+            </div>
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">💧</div>
+                <h3>Colírios/Cremes</h3>
+                <p>Aplique os medicamentos nos horários exatos.</p>
+            </div>
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">🛌</div>
+                <h3>Repouso</h3>
+                <p>Evite esforços físicos nos primeiros dias.</p>
+            </div>
+        `;
+    }
+    else if (tipo === 'duvidas') {
+        badge.innerText = "PERGUNTAS FREQUENTES";
+        title.innerText = "Dúvidas sobre o Laser";
+        sub.innerText = "Respostas rápidas para as perguntas mais comuns.";
+        grid.innerHTML = `
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">❓</div>
+                <h3>Dói?</h3>
+                <p>Não, utiliza-se anestesia local em gotas ou creme.</p>
+            </div>
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">⏱️</div>
+                <h3>Quanto demora?</h3>
+                <p>A maioria dos procedimentos dura entre 15 a 30 min.</p>
+            </div>
+            <div class="design-card editable-element" contenteditable="true">
+                <div class="card-emoji">🏥</div>
+                <h3>Precisa internar?</h3>
+                <p>Não, o paciente volta para casa no mesmo dia.</p>
+            </div>
+        `;
+    }
+}
