@@ -3,228 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprofundamento em Cirurgia a Laser: Tecnologias e Aplicações</title>
+    <title>Design - Cirurgia a Laser</title>
     <style>
         :root {
             --primary: #0f172a;
-            --accent: #2563eb;
+            --accent: #7c3aed;
             --bg-light: #f8fafc;
             --text-color: #334155;
             --border-color: #e2e8f0;
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-light);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
-            padding: 0;
+            background-color: #0e131f;
+            color: var(--text-color);
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 4rem 2rem;
+        .main-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
             text-align: center;
         }
 
-        header h1 {
-            margin: 0 0 1rem 0;
-            font-size: 2.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Botão Flutuante (Olho/Canto Superior Direito) */
-        .btn-drive-floating {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0.75rem 1.25rem;
-            background-color: #ffffff;
-            color: var(--accent);
+        .badge {
+            background-color: #f3e8ff;
+            color: #6b21a8;
+            font-size: 0.8rem;
             font-weight: bold;
-            font-size: 0.9rem;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-            border: 2px solid var(--accent);
-            transition: all 0.2s ease;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
         }
 
-        .btn-drive-floating:hover {
-            background-color: var(--accent);
-            color: #ffffff;
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        h1 {
+            color: #0f172a;
+            font-size: 2rem;
+            margin: 15px 0 5px 0;
         }
 
-        main {
-            max-width: 900px;
-            margin: -3rem auto 3rem auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-        }
-
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-top: 2.5rem;
-        }
-
-        h3 {
-            color: var(--accent);
-            margin-top: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 1.25rem;
-        }
-
-        ul {
-            margin-bottom: 1.25rem;
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        .highlight-box {
-            background-color: #eff6ff;
-            border-left: 4px solid var(--accent);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-
-        th, td {
-            border: 1px solid var(--border-color);
-            padding: 0.75rem;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--bg-light);
-            color: var(--primary);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
+        .subtitle {
             color: #64748b;
-            font-size: 0.9rem;
+            margin-bottom: 30px;
         }
 
-        footer a {
-            color: var(--accent);
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .card-link {
             text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px 15px;
+            transition: all 0.2s ease;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .card-link:hover .card {
+            border-color: #7c3aed;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.2);
+        }
+
+        .card .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1rem;
+            color: #0f172a;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #64748b;
+            line-height: 1.3;
+        }
+
+        .btn-cta {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #7c3aed, #06b6d4);
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
 
-    <!-- Botão Flutuante visível no topo da interface -->
-    <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="btn-drive-floating">
-        👁️ Ver no Google Drive
-    </a>
+    <div class="main-container">
+        <span class="badge">Tecnologia Médica</span>
+        <h1>Guia Completo: Cirurgia a Laser</h1>
+        <p class="subtitle">Tratamentos precisos, indolores e de rápida recuperação.</p>
 
-    <header>
-        <h1>Cirurgia a Laser</h1>
-        <p>Uma análise aprofundada sobre os princípios físicos, tecnologias avançadas e aplicações clínicas modernas.</p>
-    </header>
+        <div class="grid">
+            <!-- CARD DO OLHO COM O LINK DO GOOGLE DRIVE -->
+            <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="card-link">
+                <div class="card" style="border-color: #7c3aed; background-color: #faf5ff;">
+                    <span class="icon">👁️</span>
+                    <h3>Visão (LASIK)</h3>
+                    <p>Clique aqui para acessar o documento no Google Drive.</p>
+                </div>
+            </a>
 
-    <main>
-        <section>
-            <h2>1. Introdução e Princípios Físicos</h2>
-            <p>A sigla <strong>LASER</strong> significa <em>Light Amplification by Stimulated Emission of Radiation</em> (Amplificação da Luz por Emissão Estimulada de Radiação). Diferente da luz convencional, o laser é monocromático, coerente e colimado.</p>
-            <p>Na cirurgia, o feixe de luz altamente focado interage com os tecidos biológicos através de quatro mecanismos fundamentais:</p>
-            <ul>
-                <li><strong>Fototermólise:</strong> Conversão da energia luminosa em calor, resultando em vaporização, coagulação ou corte do tecido.</li>
-                <li><strong>Fotodissociação (Fotoablação):</strong> Quebra direta das ligações moleculares sem aquecimento excessivo (comum com lasers excimer).</li>
-                <li><strong>Fotodisrupção:</strong> Uso de pulsos ultracurtos (femtosegundo) para criar cortes microscópicos por meio de ionização óptica.</li>
-                <li><strong>Fotobioativação:</strong> Estímulo de processos celulares regenerativos (laser de baixa intensidade).</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>2. Principais Tipos de Lasers Médicos</h2>
-            <p>Diferentes comprimentos de onda absorvem-se de maneira distinta pelos cromóforos-alvo do corpo (como água, hemoglobina e melanina).</p>
-            <table>
-                <tr>
-                    <th>Tipo de Laser</th>
-                    <th>Comprimento de Onda</th>
-                    <th>Aplicações Principais</th>
-                </tr>
-                <tr>
-                    <td><strong>CO2 (Dióxido de Carbono)</strong></td>
-                    <td>10.600 nm (Infravermelho)</td>
-                    <td>Cortes precisos de tecidos moles, dermatologia e ginecologia.</td>
-                </tr>
-                <tr>
-                    <td><strong>Nd:YAG</strong></td>
-                    <td>1.064 nm (Infravermelho)</td>
-                    <td>Coagulação profunda, oftalmologia (catarata) e cirurgia vascular.</td>
-                </tr>
-                <tr>
-                    <td><strong>Excimer</strong></td>
-                    <td>193 nm a 351 nm (Ultravioleta)</td>
-                    <td>Cirurgia refrativa ocular (LASIK) e procedimentos de superfície corneal.</td>
-                </tr>
-                <tr>
-                    <td><strong>Femtosegundo</strong></td>
-                    <td>Variável (Pulsos ultracurtos)</td>
-                    <td>Cortes ultrassensíveis em córnea e cirurgias ortopédicas/cardíacas.</td>
-                </tr>
-            </table>
-        </section>
-
-        <section>
-            <h2>3. Áreas de Atuação e Inovações</h2>
-            
-            <h3>Oftalmologia</h3>
-            <p>Pioneira no uso de tecnologias a laser, a correção de ametropias (miopia, hipermetropia e astigmatismo) via <strong>LASIK</strong> e <strong>SMILE</strong> revolucionou a qualidade de visão de milhões de pacientes com precisão nanométrica.</p>
-
-            <h3>Cirurgia Minimamente Invasiva e Robótica</h3>
-            <p>A integração de fibras ópticas flexíveis permitiu o avanço de procedimentos endoscópicos e laparoscópicos. O laser atua no tratamento de cálculos renais (litotripsia a laser com Holmium), ressecção de próstata (HoLEP) e cirurgias oncológicas de alta precisão.</p>
-            
-            <div class="highlight-box">
-                <strong>Nota Técnica:</strong> A principal vantagem do bisturi a laser sobre o convencional é a capacidade de selar pequenos vasos sanguíneos e terminações nervosas simultaneamente ao corte, reduzindo drasticamente o sangramento intraoperatório e o edema pós-operatório.
+            <div class="card">
+                <span class="icon">✨</span>
+                <h3>Pele & Estética</h3>
+                <p>Remoção de manchas, cicatrizes de acne e rejuvenescimento.</p>
             </div>
-        </section>
 
-        <section>
-            <h2>4. Vantagens, Limitações e Perspectivas Futuras</h2>
-            <p>Embora ofereça recuperação acelerada, menor incidência de infecções e menor dor no pós-operatório, a cirurgia a laser exige investimentos tecnológicos elevados, treinamento rigoroso da equipe médica e controle estrito de segurança contra reflexos indesejados.</p>
-            <p>O futuro aponta para a miniaturização de dispositivos, inteligência artificial integrada para guiar cortes em tempo real e o desenvolvimento de lasers inteligentes capazes de diferenciar tecidos saudáveis de neoplásicos de forma autônoma.</p>
-        </section>
-    </main>
+            <div class="card">
+                <span class="icon">🛡️</span>
+                <h3>Vantagens</h3>
+                <p>Sem cortes profundos, menor risco e rápida recuperação.</p>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 • Documentação de Aprofundamento Médico e Tecnológico. | <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank">Abrir arquivo de origem no Google Drive</a></p>
-    </footer>
+        <a href="#" class="btn-cta">Agende sua avaliação com um especialista</a>
+    </div>
+
 </body>
 </html>
