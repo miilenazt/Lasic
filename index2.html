@@ -38,24 +38,35 @@
             font-size: 1.2rem;
             opacity: 0.9;
             max-width: 600px;
-            margin: 0 auto 1.5rem auto;
+            margin: 0 auto;
         }
 
-        .btn-drive {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: white;
+        /* Botão Flutuante (Olho/Canto Superior Direito) */
+        .btn-drive-floating {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.75rem 1.25rem;
+            background-color: #ffffff;
             color: var(--accent);
             font-weight: bold;
+            font-size: 0.9rem;
             text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+            border: 2px solid var(--accent);
+            transition: all 0.2s ease;
         }
 
-        .btn-drive:hover {
-            background-color: #f1f5f9;
-            transform: translateY(-2px);
+        .btn-drive-floating:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
         }
 
         main {
@@ -136,14 +147,14 @@
 </head>
 <body>
 
+    <!-- Botão Flutuante visível no topo da interface -->
+    <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="btn-drive-floating">
+        👁️ Ver no Google Drive
+    </a>
+
     <header>
         <h1>Cirurgia a Laser</h1>
         <p>Uma análise aprofundada sobre os princípios físicos, tecnologias avançadas e aplicações clínicas modernas.</p>
-        
-        <!-- Botão do Google Drive em destaque na parte superior (olho do site) -->
-        <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="btn-drive">
-            📄 Visualizar Documento no Google Drive
-        </a>
     </header>
 
     <main>
@@ -215,6 +226,5 @@
     <footer>
         <p>&copy; 2026 • Documentação de Aprofundamento Médico e Tecnológico. | <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank">Abrir arquivo de origem no Google Drive</a></p>
     </footer>
-
 </body>
 </html>
