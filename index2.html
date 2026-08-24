@@ -58,15 +58,17 @@
             display: flex;
             gap: 8px;
         }
-.btn-top {
+
+        .btn-top {
             background: #1e293b;
-            color: white; /* Removida a cerquilha # do 'white' */
+            color: white;
             border: none;
             padding: 6px 12px;
             border-radius: 4px;
             font-size: 0.8rem;
             cursor: pointer;
         }
+
         .btn-primary {
             background: #00c4cc;
             color: #0e131f;
@@ -118,6 +120,7 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            overflow-y: auto;
         }
 
         .panel-title {
@@ -132,7 +135,6 @@
             gap: 8px;
         }
 
-        /* BOTÃO DO OLHO COM O LINK DO DRIVE */
         .element-btn-link {
             text-decoration: none;
             display: block;
@@ -140,7 +142,7 @@
 
         .element-card {
             background-color: #0f172a;
-            border: 2px solid #00c4cc; /* Destaque para facilitar a localização */
+            border: 2px solid #00c4cc;
             border-radius: 8px;
             height: 80px;
             display: flex;
@@ -188,7 +190,7 @@
         }
 
         .canvas-card {
-            width: 600px;
+            width: 650px;
             background: #ffffff;
             border-radius: 12px;
             padding: 40px;
@@ -221,7 +223,7 @@
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin-bottom: 24px;
         }
@@ -298,12 +300,21 @@
             <div class="panel-title">Elementos Gráficos</div>
             
             <div class="elements-grid">
-                <!-- AQUI ESTÁ O BOTÃO DO OLHO COM O LINK DO DRIVE -->
+                <!-- BOTÃO DO OLHO COM LINK DO DRIVE -->
                 <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
                     <div class="element-card">
                         <span class="drive-badge">LINK</span>
                         <span class="icon-eye">👁️</span>
                         <span>Olho (Drive)</span>
+                    </div>
+                </a>
+
+                <!-- ELEMENTO DA GARGANTA AGORA TAMBÉM COM LINK DO DRIVE -->
+                <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
+                    <div class="element-card">
+                        <span class="drive-badge">LINK</span>
+                        <span class="icon-eye">🗣️</span>
+                        <span>Garganta (Drive)</span>
                     </div>
                 </a>
 
@@ -332,11 +343,20 @@
                 <p class="sub">Tratamentos precisos, indolores e de rápida recuperação.</p>
 
                 <div class="card-grid">
-                    <!-- LINK TAMBÉM NO CARD CENTRAL DO OLHO -->
+                    <!-- LINK DO OLHO -->
                     <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="mini-card-link">
                         <div class="mini-card">
                             <div>👁️</div>
                             <h4>Visão (LASIK)</h4>
+                            <p>Clique aqui para abrir no Google Drive.</p>
+                        </div>
+                    </a>
+
+                    <!-- CARD DA GARGANTA COM LINK DO DRIVE -->
+                    <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="mini-card-link">
+                        <div class="mini-card">
+                            <div>🗣️</div>
+                            <h4>Garganta & Laringe</h4>
                             <p>Clique aqui para abrir no Google Drive.</p>
                         </div>
                     </a>
