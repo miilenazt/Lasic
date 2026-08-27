@@ -85,7 +85,7 @@
         /* Left Navigation Bar */
         .sidebar-nav {
             width: 72px;
-            background-color: #181ee800;
+            background-color: #0e131f;
             border-right: 1px solid #1e293b;
             display: flex;
             flex-direction: column;
@@ -165,10 +165,6 @@
             border-color: #2563eb;
         }
 
-        .element-card .icon-eye {
-            font-size: 1.4rem;
-        }
-
         .drive-badge {
             position: absolute;
             top: 4px;
@@ -238,16 +234,6 @@
             height: 100%;
         }
 
-        .mini-card-link {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .mini-card-link:hover .mini-card {
-            border-color: #2563eb;
-            background-color: #eff6ff;
-        }
-
         .mini-card h4 {
             font-size: 0.85rem;
             color: #0f172a;
@@ -290,7 +276,6 @@
     </header>
 
     <div class="app-body">
-        <!-- Sidebar Ícones (Aba Design Ativa) -->
         <div class="sidebar-nav">
             <div class="nav-item active">🎨<br>Design</div>
             <div class="nav-item">🧩<br>Elementos</div>
@@ -298,42 +283,46 @@
             <div class="nav-item">☁️<br>Uploads</div>
         </div>
 
-        <!-- Painel Lateral da Aba Design (Templates de Saúde) -->
+        <!-- PAINEL DA ESQUERDA COM OS LINKS DO DRIVE NOS TEMPLATES -->
         <div class="sidebar-panel">
             <div class="panel-title">Templates de Saúde</div>
             
             <div class="elements-grid">
-                <!-- TEMPLATE LASER OCULAR COM LINK DO DRIVE -->
+                <!-- LINK 1: LASER OCULAR -->
                 <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
                     <div class="element-card">
                         <span class="drive-badge">LINK</span>
-                        <span class="icon-eye">👁️</span>
                         <span>Laser Ocular</span>
                     </div>
                 </a>
 
-                <!-- TEMPLATE DERMATOLOGIA COM LINK DO DRIVE -->
+                <!-- LINK 2: DERMATOLOGIA -->
                 <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
                     <div class="element-card">
                         <span class="drive-badge">LINK</span>
-                        <span class="icon-eye">🧴</span>
                         <span>Dermatologia</span>
                     </div>
                 </a>
 
-                <div class="element-card">
-                    <span>📋</span>
-                    <span>Pós-Operatório</span>
-                </div>
+                <!-- LINK 3: PÓS-OPERATÓRIO -->
+                <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
+                    <div class="element-card">
+                        <span class="drive-badge">LINK</span>
+                        <span>Pós-Operatório</span>
+                    </div>
+                </a>
 
-                <div class="element-card">
-                    <span>❓</span>
-                    <span>Dúvidas Frequentes</span>
-                </div>
+                <!-- LINK 4: DÚVIDAS FREQUENTES -->
+                <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
+                    <div class="element-card">
+                        <span class="drive-badge">LINK</span>
+                        <span>Dúvidas Frequentes</span>
+                    </div>
+                </a>
             </div>
         </div>
 
-        <!-- Área de Edição (Canvas Central) -->
+        <!-- CANVAS CENTRAL -->
         <div class="canvas-area">
             <div class="canvas-card">
                 <span class="tag-med">CUIDADOS MÉDICOS</span>
@@ -359,14 +348,11 @@
                         <p>Evite esfregar a área tratada e evite atividades intensas no início.</p>
                     </div>
 
-                    <!-- CARD COM LINK DO DRIVE NO CANVAS -->
-                    <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="mini-card-link">
-                        <div class="mini-card">
-                            <div>👁️</div>
-                            <h4>Oftalmologia</h4>
-                            <p>Clique aqui para escrever as informações sobre este item.</p>
-                        </div>
-                    </a>
+                    <div class="mini-card">
+                        <div>👁️</div>
+                        <h4>Oftalmologia</h4>
+                        <p>Clique aqui para escrever as informações sobre este item.</p>
+                    </div>
 
                     <div class="mini-card">
                         <div>✨</div>
