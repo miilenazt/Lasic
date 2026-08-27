@@ -111,7 +111,7 @@
             color: #00c4cc;
         }
 
-        /* Left Panel (Elementos / Templates) */
+        /* Left Panel (Design / Templates) */
         .sidebar-panel {
             width: 260px;
             background-color: #181f2c;
@@ -155,6 +155,8 @@
             cursor: pointer;
             transition: all 0.2s;
             position: relative;
+            text-align: center;
+            padding: 4px;
         }
 
         .element-card:hover {
@@ -223,7 +225,7 @@
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
             margin-bottom: 24px;
         }
@@ -233,6 +235,7 @@
             border: 1px solid #e2e8f0;
             border-radius: 8px;
             padding: 16px 8px;
+            height: 100%;
         }
 
         .mini-card-link {
@@ -287,50 +290,45 @@
     </header>
 
     <div class="app-body">
-        <!-- Sidebar Ícones -->
+        <!-- Sidebar Ícones (Aba Design Ativa) -->
         <div class="sidebar-nav">
-            <div class="nav-item">🎨<br>Design</div>
-            <div class="nav-item active">🧩<br>Elementos</div>
+            <div class="nav-item active">🎨<br>Design</div>
+            <div class="nav-item">🧩<br>Elementos</div>
             <div class="nav-item">T<br>Texto</div>
             <div class="nav-item">☁️<br>Uploads</div>
         </div>
 
-        <!-- Painel Lateral de Elementos -->
+        <!-- Painel Lateral da Aba Design (Templates de Saúde) -->
         <div class="sidebar-panel">
-            <div class="panel-title">Elementos Gráficos</div>
+            <div class="panel-title">Templates de Saúde</div>
             
             <div class="elements-grid">
-                <!-- BOTÃO DO OLHO COM LINK DO DRIVE -->
+                <!-- TEMPLATE LASER OCULAR COM LINK DO DRIVE -->
                 <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
                     <div class="element-card">
                         <span class="drive-badge">LINK</span>
                         <span class="icon-eye">👁️</span>
-                        <span>Olho (Drive)</span>
+                        <span>Laser Ocular</span>
                     </div>
                 </a>
 
-                <!-- ELEMENTO DA GARGANTA AGORA TAMBÉM COM LINK DO DRIVE -->
+                <!-- TEMPLATE DERMATOLOGIA COM LINK DO DRIVE -->
                 <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
                     <div class="element-card">
                         <span class="drive-badge">LINK</span>
-                        <span class="icon-eye">🗣️</span>
-                        <span>Garganta (Drive)</span>
+                        <span class="icon-eye">🧴</span>
+                        <span>Dermatologia</span>
                     </div>
                 </a>
 
                 <div class="element-card">
-                    <span>✨</span>
-                    <span>Brilho</span>
+                    <span>📋</span>
+                    <span>Pós-Operatório</span>
                 </div>
 
                 <div class="element-card">
-                    <span>🛡️</span>
-                    <span>Escudo</span>
-                </div>
-
-                <div class="element-card">
-                    <span>🔬</span>
-                    <span>Lente</span>
+                    <span>❓</span>
+                    <span>Dúvidas Frequentes</span>
                 </div>
             </div>
         </div>
@@ -338,39 +336,48 @@
         <!-- Área de Edição (Canvas Central) -->
         <div class="canvas-area">
             <div class="canvas-card">
-                <span class="tag-med">Tecnologia Médica</span>
-                <h1>Guia Completo: Cirurgia a Laser</h1>
-                <p class="sub">Tratamentos precisos, indolores e de rápida recuperação.</p>
+                <span class="tag-med">CUIDADOS MÉDICOS</span>
+                <h1>Orientações do Pós-Operatório</h1>
+                <p class="sub">Passos fundamentais para garantir os melhores resultados.</p>
 
                 <div class="card-grid">
-                    <!-- LINK DO OLHO -->
+                    <div class="mini-card">
+                        <div>🕶️</div>
+                        <h4>Proteção Solar</h4>
+                        <p>Uso indispensável de óculos escuros e filtro solar indicado.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <div>💧</div>
+                        <h4>Medicamentos</h4>
+                        <p>Aplicação rigorosa de colírios ou pomadas nos horários certos.</p>
+                    </div>
+
+                    <div class="mini-card">
+                        <div>🛌</div>
+                        <h4>Repouso</h4>
+                        <p>Evite esfregar a área tratada e evite atividades intensas no início.</p>
+                    </div>
+
+                    <!-- CARD COM LINK DO DRIVE NO CANVAS -->
                     <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="mini-card-link">
                         <div class="mini-card">
                             <div>👁️</div>
-                            <h4>Visão (LASIK)</h4>
-                            <p>Clique aqui para abrir no Google Drive.</p>
-                        </div>
-                    </a>
-
-                    <!-- CARD DA GARGANTA COM LINK DO DRIVE -->
-                    <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="mini-card-link">
-                        <div class="mini-card">
-                            <div>🗣️</div>
-                            <h4>Garganta & Laringe</h4>
-                            <p>Clique aqui para abrir no Google Drive.</p>
+                            <h4>Oftalmologia</h4>
+                            <p>Clique aqui para escrever as informações sobre este item.</p>
                         </div>
                     </a>
 
                     <div class="mini-card">
                         <div>✨</div>
-                        <h4>Pele & Estética</h4>
-                        <p>Remoção de manchas e rejuvenescimento.</p>
+                        <h4>Laser</h4>
+                        <p>Clique aqui para escrever as informações sobre este item.</p>
                     </div>
 
                     <div class="mini-card">
-                        <div>🛡️</div>
-                        <h4>Vantagens</h4>
-                        <p>Sem cortes profundos e rápida recuperação.</p>
+                        <div>🔬</div>
+                        <h4>Tecnologia</h4>
+                        <p>Clique aqui para escrever as informações sobre este item.</p>
                     </div>
                 </div>
 
