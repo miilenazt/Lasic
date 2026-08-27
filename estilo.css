@@ -1,314 +1,165 @@
-@charset "UTF-8";
-
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    background-color: #0e1318;
-    color: #ffffff;
-    overflow: hidden;
+:root {
+    --google-blue: #1a0dab;
+    --google-gray: #4d5156;
+    --google-light-gray: #f8f9fa;
+    --google-border: #dfe1e5;
+    --google-green: #006621;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #202124;
+    background-color: #fff;
 }
 
-/* ==========================================
-   TOPO (CANVA HEADER)
-   ========================================== */
-.canva-header {
-    height: 56px;
-    background-color: #0e1318;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-    border-bottom: 1px solid #252b33;
-}
-
-.header-left {
+/* Barra de pesquisa superior */
+.search-header {
     display: flex;
     align-items: center;
-    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--google-border);
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.canva-logo {
-    font-size: 1.4rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #00c4cc, #7d2ae8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+.google-logo-small {
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 30px;
+    letter-spacing: -1px;
 }
 
-.file-info {
+.google-logo-small span:nth-child(1) { color: #4285f4; }
+.google-logo-small span:nth-child(2) { color: #ea4335; }
+.google-logo-small span:nth-child(3) { color: #fbbc05; }
+.google-logo-small span:nth-child(4) { color: #4285f4; }
+.google-logo-small span:nth-child(5) { color: #34a853; }
+.google-logo-small span:nth-child(6) { color: #ea4335; }
+
+.search-bar-container {
     display: flex;
-    flex-direction: column;
-}
-
-.doc-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.save-status {
-    font-size: 0.75rem;
-    color: #8b96a5;
-}
-
-.header-right {
-    display: flex;
-    gap: 12px;
-}
-
-.btn-secondary {
-    background-color: #252b33;
-    color: #ffffff;
-    border: none;
+    align-items: center;
+    border: 1px solid var(--google-border);
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-radius: 24px;
+    max-width: 650px;
+    width: 100%;
     padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
+    background: #fff;
 }
 
-.btn-canva-pro {
-    background: linear-gradient(135deg, #7d2ae8, #00c4cc);
-    color: #ffffff;
+.search-input {
     border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-/* ==========================================
-   BARRA DE FERRAMENTAS DO EDITOR
-   ========================================== */
-.editor-toolbar {
-    height: 40px;
-    background-color: #181e25;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    gap: 16px;
-    border-bottom: 1px solid #252b33;
-    font-size: 0.85rem;
-}
-
-.text-tools, .action-tools {
-    display: flex;
-    gap: 8px;
-}
-
-.editor-toolbar button {
+    outline: none;
+    font-size: 16px;
+    width: 100%;
     background: transparent;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 4px;
 }
 
-.editor-toolbar button:hover {
-    background-color: #252b33;
+/* Área de resultados */
+.search-results-container {
+    max-width: 650px;
+    margin-left: 180px;
+    padding: 20px 0;
 }
 
-/* ==========================================
-   ÁREA PRINCIPAL DE TRABALHO (WORKSPACE)
-   ========================================== */
-.canva-workspace {
+@media (max-width: 768px) {
+    .search-results-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .google-logo-small {
+        display: none;
+    }
+}
+
+.stats-results {
+    font-size: 14px;
+    color: #70757a;
+    margin-bottom: 25px;
+}
+
+.search-item {
+    margin-bottom: 30px;
+}
+
+.site-info {
     display: flex;
-    flex: 1;
-    height: calc(100vh - 96px);
-}
-
-.main-sidebar {
-    width: 72px;
-    background-color: #181e25;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding-top: 12px;
-    border-right: 1px solid #252b33;
-}
-
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    cursor: pointer;
-    color: #8b96a5;
-    font-size: 0.75rem;
-}
-
-.nav-item .icon {
-    font-size: 1.2rem;
+    font-size: 12px;
+    color: var(--google-gray);
     margin-bottom: 4px;
 }
 
-.nav-item.active, .nav-item:hover {
-    color: #00c4cc;
+.site-url {
+    color: #202124;
+    margin-top: 2px;
 }
 
-.panel-sidebar {
-    width: 320px;
-    background-color: #252b33;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.panel-sidebar h3 {
-    font-size: 1rem;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 8px 12px;
-    background-color: #181e25;
-    border: 1px solid #374151;
-    border-radius: 6px;
-    color: #ffffff;
-}
-
-.templates-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.thumb-card {
-    height: 100px;
-    background-color: #181e25;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    cursor: pointer;
-    border: 2px solid transparent;
-    text-align: center;
-    padding: 8px;
-}
-
-.thumb-card.active, .thumb-card:hover {
-    border-color: #00c4cc;
-}
-
-/* ==========================================
-   ÁREA DA ARTBOARD (CANVAS CENTRAL)
-   ========================================== */
-.canvas-area {
-    flex: 1;
-    background-color: #0e1318;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
-    padding: 40px;
-}
-
-.artboard {
-    width: 700px;
-    min-height: 500px;
-    background-color: #ffffff;
-    color: #111827;
-    border-radius: 4px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.design-header {
-    text-align: center;
-}
-
-.badge {
-    background-color: #f0ebf8;
-    color: #7d2ae8;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 20px;
-    letter-spacing: 1px;
-}
-
-.design-header h1 {
-    font-size: 2rem;
-    color: #0e1318;
-    margin: 12px 0 8px 0;
-}
-
-.design-header p {
-    color: #4b5563;
-    font-size: 0.95rem;
-}
-
-.design-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 30px 0;
-}
-
-.design-card {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    padding: 16px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.card-emoji {
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-}
-
-.design-card h3 {
-    font-size: 1rem;
-    margin-bottom: 6px;
-    color: #111827;
-}
-
-.design-card p {
-    font-size: 0.8rem;
-    color: #6b7280;
+.result-title {
+    font-size: 20px;
     line-height: 1.3;
+    margin: 0 0 3px 0;
 }
 
-.design-footer {
-    text-align: center;
-    background: linear-gradient(135deg, #7d2ae8, #00c4cc);
-    color: #ffffff;
-    padding: 12px;
+.result-title a {
+    color: var(--google-blue);
+    text-decoration: none;
+}
+
+.result-title a:hover {
+    text-decoration: underline;
+}
+
+.result-snippet {
+    font-size: 14px;
+    line-height: 1.58;
+    color: var(--google-gray);
+}
+
+.result-snippet strong {
+    color: #202124;
+    font-weight: normal;
+}
+
+/* Painel lateral de conhecimento (Knowledge Graph) */
+.knowledge-panel {
+    position: absolute;
+    right: 80px;
+    top: 100px;
+    width: 360px;
+    border: 1px solid var(--google-border);
     border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.editable-element:hover {
-    outline: 2px solid #00c4cc;
-    cursor: pointer;
+.knowledge-panel h2 {
+    font-size: 22px;
+    margin: 0 0 5px 0;
 }
-.canvas-area {
-    flex: 1;
-    background-color: #0e1318;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Alinha no topo para a rolagem funcionar 100% em telas pequenas */
-    overflow-y: auto;
-    padding: 40px 20px;
+
+.knowledge-subtitle {
+    font-size: 14px;
+    color: var(--google-gray);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--google-border);
+    padding-bottom: 10px;
+}
+
+.knowledge-panel p {
+    font-size: 14px;
+    color: #4d5156;
+    line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+    .knowledge-panel {
+        display: none;
+    }
 }

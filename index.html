@@ -3,282 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaserMed - Editor Canva</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Cirurgia a Laser - Pesquisa Google</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="canva-header">
-        <div class="header-left">
-            <span class="canva-logo">Canva</span>
-            <div class="file-info">
-                <span class="doc-title">Design - Cirurgia a Laser</span>
-                <span class="save-status">Todas as alterações foram salvas</span>
-            </div>
+    <div class="search-header">
+        <div class="google-logo-small">
+            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
         </div>
-        <div class="header-right">
-            <button class="btn-secondary" onclick="alert('Link copiado!')">Compartilhar</button>
-            <button class="btn-canva-pro" onclick="alert('Baixando PDF...')">Baixar</button>
-        </div>
-    </header>
-
-    <div class="editor-toolbar">
-        <div class="font-selector">Inter</div>
-        <div class="font-size">24</div>
-        <div class="text-tools">
-            <button><b>B</b></button>
-            <button><i>I</i></button>
-            <button><u>U</u></button>
-            <button>🎨</button>
-        </div>
-        <div class="action-tools">
-            <button>Animar</button>
-            <button>Posição</button>
-            <button>Transparência</button>
+        <div class="search-bar-container">
+            <input type="text" class="search-input" value="cirurgia a laser">
         </div>
     </div>
 
-    <div class="canva-workspace">
+    <div class="search-results-container">
+        <div class="stats-results">Aproximadamente 4.850.000 resultados (0,34 segundos)</div>
 
-        <aside class="main-sidebar">
-            <div class="nav-item active" onclick="abrirAba('design', this)">
-                <span class="icon">🎨</span>
-                <span class="label">Design</span>
-            </div>
-            <div class="nav-item" onclick="abrirAba('elementos', this)">
-                <span class="icon">🧩</span>
-                <span class="label">Elementos</span>
-            </div>
-            <div class="nav-item" onclick="abrirAba('texto', this)">
-                <span class="icon">T</span>
-                <span class="label">Texto</span>
-            </div>
-            <div class="nav-item" onclick="abrirAba('uploads', this)">
-                <span class="icon">☁️</span>
-                <span class="label">Uploads</span>
-            </div>
-        </aside>
-
-        <aside class="panel-sidebar" id="panel-sidebar">
-            
-            <div id="aba-design" class="aba-conteudo">
-                <h3>Templates de Saúde</h3>
-                <div class="search-bar">
-                    <input type="text" placeholder="Buscar cirurgia a laser...">
-                </div>
-                <div class="templates-grid" style="margin-top: 15px;">
-                    <div class="thumb-card active" onclick="carregarTemplate('ocular')">Laser Ocular</div>
-                    <div class="thumb-card" onclick="carregarTemplate('dermo')">Dermatologia</div>
-                    <div class="thumb-card" onclick="carregarTemplate('pos')">Pós-Operatório</div>
-                    <div class="thumb-card" onclick="carregarTemplate('duvidas')">Dúvidas Frequentes</div>
+        <div class="search-item">
+            <div class="site-info">
+                <div>
+                    <div>https://www.saudeemdia.com.br › procedimentos › cirurgia-a-laser</div>
+                    <div class="site-url"><b>Cirurgia a Laser:</b> O que é, Vantagens e Principais Aplicações</div>
                 </div>
             </div>
+            <h3 class="result-title">
+                <a href="#">Tudo sobre <b>Cirurgia a Laser</b>: Tecnologia e Recuperação</a>
+            </h3>
+            <div class="result-snippet">
+                A <b>cirurgia a laser</b> é um procedimento médico que utiliza feixes de luz focados para cortar, vaporizar ou modificar tecidos com extrema precisão, garantindo menor sangramento e recuperação rápida.
+            </div>
+        </div>
 
-            <div id="aba-elementos" class="aba-conteudo" style="display: none;">
-                <h3>Elementos Gráficos</h3>
-                <p style="font-size: 0.8rem; color: #8b96a5; margin-bottom: 15px;">Clique para adicionar ao design:</p>
-                <div class="templates-grid">
-                    <div class="thumb-card" onclick="adicionarElemento('👁️', 'Oftalmologia')">👁️ Olho</div>
-                    <div class="thumb-card" onclick="adicionarElemento('✨', 'Laser')">✨ Brilho</div>
-                    <div class="thumb-card" onclick="adicionarElemento('🛡️', 'Segurança')">🛡️ Escudo</div>
-                    <div class="thumb-card" onclick="adicionarElemento('🔬', 'Tecnologia')">🔬 Lente</div>
+        <div class="search-item">
+            <div class="site-info">
+                <div>
+                    <div>https://www.oftalmologiaespecializada.com.br › laser-olhos</div>
+                    <div class="site-url">Oftalmologia Moderna</div>
                 </div>
             </div>
+            <h3 class="result-title">
+                <a href="#">Correção Visual a Laser: LASIK e PRK</a>
+            </h3>
+            <div class="result-snippet">
+                Saiba como a <b>cirurgia a laser</b> nos olhos corrige miopia, hipermetropia e astigmatismo em poucos minutos, proporcionando independência dos óculos e lentes de contato.
+            </div>
+        </div>
 
-            <div id="aba-texto" class="aba-conteudo" style="display: none;">
-                <h3>Adicionar Texto</h3>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                    <button class="btn-secondary" style="text-align: left; padding: 12px;" onclick="adicionarTexto('Novo Título Principal')"><b>+ Adicionar Título</b></button>
-                    <button class="btn-secondary" style="text-align: left; padding: 10px;" onclick="adicionarTexto('Novo Subtítulo informativo')">+ Adicionar Subtítulo</button>
-                    <button class="btn-secondary" style="text-align: left; padding: 8px; font-size: 0.8rem;" onclick="adicionarTexto('Texto complementar sobre o tratamento.')">+ Adicionar corpo de texto</button>
+        <div class="search-item">
+            <div class="site-info">
+                <div>
+                    <div>https://www.dermatoavancada.com.br › procedimentos › laser-estetico</div>
+                    <div class="site-url">Dermatologia & Estética Avançada</div>
                 </div>
             </div>
+            <h3 class="result-title">
+                <a href="#">Tecnologia a Laser na Dermatologia</a>
+            </h3>
+            <div class="result-snippet">
+                Descubra as indicações do laser para remoção de manchas, cicatrizes de acne, rejuvenescimento facial e eliminação de lesões cutâneas com total segurança.
+            </div>
+        </div>
 
-            <div id="aba-uploads" class="aba-conteudo" style="display: none;">
-                <h3>Seus Arquivos</h3>
-                <div style="border: 2px dashed #374151; border-radius: 8px; padding: 20px; text-align: center; margin-top: 15px;">
-                    <p style="font-size: 0.8rem; color: #8b96a5;">Arraste imagens do seu computador ou faça upload de laudos/exames.</p>
-                    <button class="btn-canva-pro" style="margin-top: 10px;" onclick="alert('Funcionalidade de Upload de Imagem simulada!')">Fazer Upload</button>
+        <div class="search-item">
+            <div class="site-info">
+                <div>
+                    <div>https://www.minhavida.com.br › saude › cirurgia-a-laser-vantagens</div>
+                    <div class="site-url">Minha Vida - Saúde e Bem-Estar</div>
                 </div>
             </div>
-
-        </aside>
-
-        <main class="canvas-area">
-            <div class="artboard" id="artboard">
-                <div class="design-header">
-                    <span class="badge" id="art-badge" contenteditable="true">TECNOLOGIA MÉDICA</span>
-                    <h1 class="editable-element" id="art-title" contenteditable="true">Guia Completo: Cirurgia a Laser</h1>
-                    <p class="editable-element" id="art-sub" contenteditable="true">Tratamentos precisos, indolores e de rápida recuperação.</p>
-                </div>
-
-                <div class="design-grid" id="art-grid">
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">👁️</div>
-                        <h3>Visão (LASIK)</h3>
-                        <p>Correção de miopia, astigmatismo e hipermetropia em poucos minutos.</p>
-                    </div>
-
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">✨</div>
-                        <h3>Pele & Estética</h3>
-                        <p>Remoção de manchas, cicatrizes de acne e rejuvenescimento facial.</p>
-                    </div>
-
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">🛡️</div>
-                        <h3>Vantagens</h3>
-                        <p>Sem cortes profundos, menor risco de infecção e rápida recuperação.</p>
-                    </div>
-                </div>
-
-                <div class="design-footer editable-element" id="art-footer" contenteditable="true">
-                    <span>Agende sua avaliação com um especialista</span>
-                </div>
+            <h3 class="result-title">
+                <a href="#">Quais as principais vantagens da <b>cirurgia a laser</b>?</a>
+            </h3>
+            <div class="result-snippet">
+                Menor dor pós-operatória, redução drástica no risco de infecções e cicatrizes quase imperceptíveis estão entre os principais benefícios relatados por médicos.
             </div>
-        </main>
-
+        </div>
     </div>
 
-    <script>
-        // 1. Função para trocar os menus do canto esquerdo
-        function abrirAba(nomeAba, elementoClicado) {
-            // Remove destaque do ícone anterior
-            document.querySelectorAll('.main-sidebar .nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            // Ativa o ícone clicado
-            elementoClicado.classList.add('active');
+    <div class="knowledge-panel">
+        <h2>Cirurgia a laser</h2>
+        <div class="knowledge-subtitle">Procedimento médico</div>
+        <p>A cirurgia a laser emprega energia luminosa concentrada para realizar intervenções cirúrgicas com precisão microscópica. É amplamente utilizada na oftalmologia, dermatologia, cirurgia geral e procedimentos estéticos, destacando-se pelo tempo reduzido de internação e cicatrização acelerada.</p>
+    </div>
 
-            // Esconde todas as abas internas
-            document.querySelectorAll('.aba-conteudo').forEach(aba => {
-                aba.style.display = 'none';
-            });
-
-            // Mostra a aba selecionada
-            document.getElementById('aba-' + nomeAba).style.display = 'block';
-        }
-
-        // 2. Função para alterar os templates centrais
-        function carregarTemplate(tipo) {
-            const badge = document.getElementById('art-badge');
-            const title = document.getElementById('art-title');
-            const sub = document.getElementById('art-sub');
-            const grid = document.getElementById('art-grid');
-
-            if (tipo === 'ocular') {
-                badge.innerText = "TECNOLOGIA MÉDICA";
-                title.innerText = "Guia Completo: Cirurgia a Laser";
-                sub.innerText = "Tratamentos precisos, indolores e de rápida recuperação.";
-                grid.innerHTML = `
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">👁️</div>
-                        <h3>Visão (LASIK)</h3>
-                        <p>Correção de miopia, astigmatismo e hipermetropia em poucos minutos.</p>
-                    </div>
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">✨</div>
-                        <h3>Pele & Estética</h3>
-                        <p>Remoção de manchas, cicatrizes de acne e rejuvenescimento facial.</p>
-                    </div>
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">🛡️</div>
-                        <h3>Vantagens</h3>
-                        <p>Sem cortes profundos, menor risco de infecção e rápida recuperação.</p>
-                    </div>
-                `;
-            } else if (tipo === 'dermo') {
-                badge.innerText = "DERMATOLOGIA AVANÇADA";
-                title.innerText = "Tratamentos a Laser para a Pele";
-                sub.innerText = "Renovação celular e alta precisão estética.";
-                grid.innerHTML = `
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">🌟</div>
-                        <h3>Rejuvenescimento</h3>
-                        <p>Estímulo intenso de colágeno para atenuar linhas e rugas.</p>
-                    </div>
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">🎯</div>
-                        <h3>Remoção de Manchas</h3>
-                        <p>Ação direta na pigmentação para tratar melasma e sardas.</p>
-                    </div>
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">⚡</div>
-                        <h3>Cicatrizes</h3>
-                        <p>Suavização de marcas e uniformização da textura da pele.</p>
-                    </div>
-                `;
-            } else if (tipo === 'pos') {
-                badge.innerText = "CUIDADOS MÉDICOS";
-                title.innerText = "Orientações do Pós-Operatório";
-                sub.innerText = "Passos fundamentais para garantir os melhores resultados.";
-                grid.innerHTML = `
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">🕶️</div>
-                        <h3>Proteção Solar</h3>
-                        <p>Uso indispensável de óculos escuros e filtro solar indicado.</p>
-                    </div>
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">💧</div>
-                        <h3>Medicamentos</h3>
-                        <p>Aplicação rigorosa de colírios ou pomadas nos horários certos.</p>
-                    </div>
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">🛌</div>
-                        <h3>Repouso</h3>
-                        <p>Evite esfregar a área tratada e evite atividades intensas no início.</p>
-                    </div>
-                `;
-            } else if (tipo === 'duvidas') {
-                badge.innerText = "PERGUNTAS FREQUENTES";
-                title.innerText = "Dúvidas Frequentes sobre o Laser";
-                sub.innerText = "Tudo o que você precisa saber antes do procedimento.";
-                grid.innerHTML = `
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">❓</div>
-                        <h3>O procedimento dói?</h3>
-                        <p>Não. É aplicada anestesia local em gotas ou cremes anestésicos.</p>
-                    </div>
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">⏱️</div>
-                        <h3>Quanto tempo dura?</h3>
-                        <p>Na maioria dos casos, entre 15 a 30 minutos de aplicação.</p>
-                    </div>
-                    <div class="design-card editable-element" contenteditable="true">
-                        <div class="card-emoji">🏥</div>
-                        <h3>Precisa de internação?</h3>
-                        <p>Não. O procedimento é ambulatorial e o paciente volta para casa no dia.</p>
-                    </div>
-                `;
-            }
-        }
-
-        // 3. Adicionar Elementos Gráficos no Design
-        function adicionarElemento(emoji, titulo) {
-            const grid = document.getElementById('art-grid');
-            const novoCard = document.createElement('div');
-            novoCard.className = 'design-card editable-element';
-            novoCard.contentEditable = 'true';
-            novoCard.innerHTML = `
-                <div class="card-emoji">${emoji}</div>
-                <h3>${titulo}</h3>
-                <p>Clique aqui para escrever as informações sobre este item.</p>
-            `;
-            grid.appendChild(novoCard);
-        }
-
-        // 4. Adicionar Textos Extras no Design
-        function adicionarTexto(texto) {
-            const artboard = document.getElementById('artboard');
-            const novoTexto = document.createElement('p');
-            novoTexto.className = 'editable-element';
-            novoTexto.contentEditable = 'true';
-            novoTexto.style.marginTop = '15px';
-            novoTexto.style.textAlign = 'center';
-            novoTexto.innerText = texto;
-            artboard.appendChild(novoTexto);
-        }
-    </script>
 </body>
 </html>

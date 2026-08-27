@@ -3,374 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaserMed - Editor Canva</title>
+    <title>Aprofundamento Técnico: Cirurgia a Laser na Medicina Moderna</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0284c7;
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --border-color: #cbd5e1;
         }
 
         body {
-            background-color: #0e131f;
-            color: #ffffff;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
         }
 
-        /* Top Bar */
         header {
-            height: 48px;
-            background-color: #0e131f;
-            border-bottom: 1px solid #1e293b;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 16px;
-        }
-
-        .logo-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .canva-logo {
-            color: #00c4cc;
-            font-weight: 900;
-            font-size: 1.2rem;
-        }
-
-        .doc-title {
-            font-size: 0.9rem;
-            color: #e2e8f0;
-        }
-
-        .doc-sub {
-            font-size: 0.75rem;
-            color: #64748b;
-        }
-
-        .top-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-top {
-            background: #1e293b;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            cursor: pointer;
+            padding: 3rem 1rem;
+            text-align: center;
         }
 
-        .btn-primary {
-            background: #00c4cc;
-            color: #0e131f;
-            font-weight: bold;
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.2rem;
         }
 
-        /* App Layout */
-        .app-body {
-            display: flex;
-            flex: 1;
-            height: calc(100vh - 48px);
+        header p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
-        /* Left Navigation Bar */
-        .sidebar-nav {
-            width: 72px;
-            background-color: #0e131f;
-            border-right: 1px solid #1e293b;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 12px;
-            gap: 16px;
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.65rem;
-            color: #94a3b8;
-            text-decoration: none;
-            cursor: pointer;
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin-top: 1.5rem;
+        }
+
+        table {
             width: 100%;
-            padding: 8px 0;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
         }
 
-        .nav-item.active {
-            color: #00c4cc;
-        }
-
-        /* Left Panel (Design / Templates) */
-        .sidebar-panel {
-            width: 260px;
-            background-color: #181f2c;
-            border-right: 1px solid #1e293b;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            overflow-y: auto;
-        }
-
-        .panel-title {
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #f8fafc;
-        }
-
-        .elements-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-        }
-
-        .element-btn-link {
-            text-decoration: none;
-            display: block;
-        }
-
-        .element-card {
-            background-color: #0f172a;
-            border: 2px solid #00c4cc;
-            border-radius: 8px;
-            height: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            color: #ffffff;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            position: relative;
-            text-align: center;
-            padding: 4px;
-        }
-
-        .element-card:hover {
-            background-color: #1e293b;
-            transform: translateY(-2px);
-            border-color: #2563eb;
-        }
-
-        .drive-badge {
-            position: absolute;
-            top: 4px;
-            right: 4px;
-            background: #2563eb;
-            color: white;
-            font-size: 0.55rem;
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        /* Canvas Area */
-        .canvas-area {
-            flex: 1;
-            background-color: #0d1117;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .canvas-card {
-            width: 650px;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 40px;
-            color: #334155;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .tag-med {
-            background-color: #f3e8ff;
-            color: #7c3aed;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-
-        .canvas-card h1 {
-            color: #0f172a;
-            font-size: 1.8rem;
-            margin: 12px 0 4px 0;
-        }
-
-        .canvas-card p.sub {
-            color: #64748b;
-            font-size: 0.85rem;
-            margin-bottom: 24px;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .mini-card {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 16px 8px;
-            height: 100%;
-        }
-
-        .mini-card h4 {
-            font-size: 0.85rem;
-            color: #0f172a;
-            margin: 6px 0 4px 0;
-        }
-
-        .mini-card p {
-            font-size: 0.7rem;
-            color: #64748b;
-            line-height: 1.2;
-        }
-
-        .cta-btn {
-            background: linear-gradient(90deg, #7c3aed, #06b6d4);
-            color: white;
-            border: none;
+        th, td {
+            border: 1px solid var(--border-color);
             padding: 12px;
-            width: 100%;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            cursor: pointer;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .note {
+            background-color: #e0f2fe;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #0f172a;
+            color: white;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-title">
-            <span class="canva-logo">Canva</span>
-            <div>
-                <div class="doc-title">Design - Cirurgia a Laser</div>
-                <div class="doc-sub">Todas as alterações foram salvas</div>
-            </div>
-        </div>
-        <div class="top-buttons">
-            <button class="btn-top">Compartilhar</button>
-            <button class="btn-top btn-primary">Baixar</button>
-        </div>
+        <h1>Aprofundamento Técnico: Cirurgia a Laser</h1>
+        <p>Mecanismos de Ação, Física Óptica e Especialidades Clínicas Avançadas</p>
     </header>
 
-    <div class="app-body">
-        <div class="sidebar-nav">
-            <div class="nav-item active">🎨<br>Design</div>
-            <div class="nav-item">🧩<br>Elementos</div>
-            <div class="nav-item">T<br>Texto</div>
-            <div class="nav-item">☁️<br>Uploads</div>
+    <div class="container">
+
+        <div class="card">
+            <h2>1. Princípios Físicos e Mecanismo de Ação</h2>
+            <p>A palavra <strong>LASER</strong> é um acrônimo para <em>Light Amplification by Stimulated Emission of Radiation</em> (Amplificação de Luz por Emissão Estimulada de Radiação). Diferente da luz comum, o feixe de laser possui três características fundamentais:</p>
+            <ul>
+                <li><strong>Monocromaticidade:</strong> O feixe possui um único comprimento de onda específico, permitindo que tecidos-alvo absorvam a energia seletivamente.</li>
+                <li><strong>Coerência:</strong> As ondas de luz viajam em perfeita sincronia temporal e espacial.</li>
+                <li><strong>Colimação:</strong> O feixe é extremamente direcionado, com baixíssima divergência ao longo de grandes distâncias.</li>
+            </ul>
+            <p>Quando aplicados na medicina, esses feixes interagem com os tecidos biológicos por meio de processos térmicos, fotoquímicos ou fotomecânicos, permitindo cortes micrométricos e coagulação simultânea de capilares.</p>
         </div>
 
-        <!-- PAINEL DA ESQUERDA COM OS LINKS DO DRIVE NOS TEMPLATES -->
-        <div class="sidebar-panel">
-            <div class="panel-title">Templates de Saúde</div>
+        <div class="card">
+            <h2>2. Tipos de Laser Utilizados na Medicina</h2>
+            <p>Diferentes comprimentos de onda e fontes de energia determinam a aplicação clínica de cada equipamento:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Laser</th>
+                        <th>Comprimento de Onda / Meio</th>
+                        <th>Principal Aplicação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CO2 (Dióxido de Carbono)</strong></td>
+                        <td>Invisível (Infravermelho - 10.600 nm)</td>
+                        <td>Cirurgia geral, cortes teciduais precisos, vaporização de lesões e dermatologia (resurfacing).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nd:YAG</strong></td>
+                        <td>Infravermelho próximo (1.064 nm)</td>
+                        <td>Oftalmologia (pós-catarata), coagulação de vasos profundos e urologia (cálculos renais e próstata).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Excimer Laser</strong></td>
+                        <td>Ultravioleta (193 nm)</td>
+                        <td>Cirurgia refrativa ocular (LASIK / PRK), alterando a curvatura da córnea com precisão atômica.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Laser de Argônio</strong></td>
+                        <td>Luz visível (Azul/Verde)</td>
+                        <td>Retinopatia diabética, fotocoagulação vascular e dermatologia vascular.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>3. Aplicações Avançadas por Especialidade</h2>
             
-            <div class="elements-grid">
-                <!-- LINK 1: LASER OCULAR -->
-                <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
-                    <div class="element-card">
-                        <span class="drive-badge">LINK</span>
-                        <span>Laser Ocular</span>
-                    </div>
-                </a>
+            <h3>Urologia</h3>
+            <p>Utilizado amplamente no tratamento da Hiperplasia Prostática Benigna (HPB) com técnicas como o HoLEP (Laser de Holmium), e na litotripsia a laser para fragmentação de cálculos renais sem necessidade de cortes invasivos.</p>
 
-                <!-- LINK 2: DERMATOLOGIA -->
-                <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
-                    <div class="element-card">
-                        <span class="drive-badge">LINK</span>
-                        <span>Dermatologia</span>
-                    </div>
-                </a>
+            <h3>Oftalmologia de Alta Precisão</h3>
+            <p>Além da correção de graus (miopia, hipermetropia e astigmatismo), o laser de femtossegundo é empregado para criar retalhos corneanos ultraprecisos e na cirurgia de catarata assistida por laser, reduzindo drasticamente o tempo cirúrgico.</p>
 
-                <!-- LINK 3: PÓS-OPERATÓRIO -->
-                <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
-                    <div class="element-card">
-                        <span class="drive-badge">LINK</span>
-                        <span>Pós-Operatório</span>
-                    </div>
-                </a>
+            <h3>Cirurgia Cardiovascular e Oncológica</h3>
+            <p>Em certas intervenções, fibras ópticas flexíveis introduzidas por cateteres permitem a desobstrução de vasos sanguíneos ou a ablação térmica de tumores hepáticos e pulmonares inoperáveis por vias tradicionais.</p>
 
-                <!-- LINK 4: DÚVIDAS FREQUENTES -->
-                <a href="https://drive.google.com/file/d/1dlTlDDJwUjzOfAuqcdhBys6_Xl7TLB8B/view?usp=sharing" target="_blank" class="element-btn-link">
-                    <div class="element-card">
-                        <span class="drive-badge">LINK</span>
-                        <span>Dúvidas Frequentes</span>
-                    </div>
-                </a>
+            <div class="note">
+                <p><strong>Segurança Operacional:</strong> Salas cirúrgicas que utilizam lasers exigem protocolos rigorosos, incluindo óculos de proteção específicos para cada comprimento de onda e sistemas de exaustão para plumas cirúrgicas (fumaça gerada pela vaporização de tecidos).</p>
             </div>
         </div>
 
-        <!-- CANVAS CENTRAL -->
-        <div class="canvas-area">
-            <div class="canvas-card">
-                <span class="tag-med">CUIDADOS MÉDICOS</span>
-                <h1>Orientações do Pós-Operatório</h1>
-                <p class="sub">Passos fundamentais para garantir os melhores resultados.</p>
-
-                <div class="card-grid">
-                    <div class="mini-card">
-                        <div>🕶️</div>
-                        <h4>Proteção Solar</h4>
-                        <p>Uso indispensável de óculos escuros e filtro solar indicado.</p>
-                    </div>
-
-                    <div class="mini-card">
-                        <div>💧</div>
-                        <h4>Medicamentos</h4>
-                        <p>Aplicação rigorosa de colírios ou pomadas nos horários certos.</p>
-                    </div>
-
-                    <div class="mini-card">
-                        <div>🛌</div>
-                        <h4>Repouso</h4>
-                        <p>Evite esfregar a área tratada e evite atividades intensas no início.</p>
-                    </div>
-
-                    <div class="mini-card">
-                        <div>👁️</div>
-                        <h4>Oftalmologia</h4>
-                        <p>Clique aqui para escrever as informações sobre este item.</p>
-                    </div>
-
-                    <div class="mini-card">
-                        <div>✨</div>
-                        <h4>Laser</h4>
-                        <p>Clique aqui para escrever as informações sobre este item.</p>
-                    </div>
-
-                    <div class="mini-card">
-                        <div>🔬</div>
-                        <h4>Tecnologia</h4>
-                        <p>Clique aqui para escrever as informações sobre este item.</p>
-                    </div>
-                </div>
-
-                <button class="cta-btn">Agende sua avaliação com um especialista</button>
-            </div>
+        <div class="card">
+            <h2>4. Perspectivas Futuras e Inovações</h2>
+            <p>A pesquisa atual foca no desenvolvimento de lasers ultrarrápidos (pulsos na faixa de picossegundos e femtossegundos) capazes de interagir com o tecido a nível celular sem gerar calor residual. Isso promete cicatrizações praticamente invisíveis, avanços na microcirurgia de nervos periféricos e terapias fotodinâmicas direcionadas para o combate molecular ao câncer.</p>
         </div>
+
     </div>
+
+    <footer>
+        <p>&copy; 2026 Portal de Engenharia Biomédica e Tecnologia Médica. Documento técnico de referência.</p>
+    </footer>
 
 </body>
 </html>
